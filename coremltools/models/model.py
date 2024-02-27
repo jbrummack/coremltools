@@ -384,12 +384,12 @@ class MLModel:
             )
         elif isinstance(model, _Model_pb2.Model):
             if does_model_contain_mlprogram(model):
-                if model.WhichOneof("Type") == "mlProgram" and weights_dir is None:
-                    raise Exception(
-                        "MLModel of type mlProgram cannot be loaded just from the model spec object. "
-                        "It also needs the path to the weights file. Please provide that as well, "
-                        "using the 'weights_dir' argument."
-                    )
+                #if model.WhichOneof("Type") == "mlProgram" and weights_dir is None:
+                #    raise Exception(
+                #        "MLModel of type mlProgram cannot be loaded just from the model spec object. "
+                #        "It also needs the path to the weights file. Please provide that as well, "
+                #        "using the 'weights_dir' argument."
+                #    )
                 self.is_package = True
                 self.is_temp_package = True
                 filename = _create_mlpackage(model, weights_dir)
